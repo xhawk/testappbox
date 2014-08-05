@@ -1,0 +1,12 @@
+{
+    "name" : "testapp",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "run_list": [
+    	"recipe[apt]",
+    	"recipe[iptables-ng]",
+    	"recipe[git]",
+    	"recipe[nodejs]",
+    	"recipe[testapp]"
+    ]
+}
