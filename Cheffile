@@ -5,6 +5,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'apt'
 cookbook 'git'
+cookbook 'mongodb'
 cookbook 'nodejs'
 cookbook 'iptables-ng',
 	:git => 'git@github.com:chr4-cookbooks/iptables-ng.git'
