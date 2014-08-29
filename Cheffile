@@ -7,8 +7,8 @@ cookbook 'apt'
 cookbook 'git'
 cookbook 'mongodb'
 cookbook 'nodejs'
-cookbook 'iptables-ng',
-	:git => 'git@github.com:chr4-cookbooks/iptables-ng.git'
+#cookbook 'iptables-ng',
+#	:git => 'git@github.com:chr4-cookbooks/iptables-ng.git'
 
 # cookbook 'apache2', '>= 1.0.0'
 

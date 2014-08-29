@@ -5,8 +5,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "testappbox"
-  config.vm.box_url="http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box"
+  #config.vm.box = "testappbox5"
+  #config.vm.box_url="http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box"
+  config.vm.box = "berendt/ubuntu-14.04-amd64"
 
   config.vm.network :forwarded_port, guest: 8081, host: 8080
   config.vm.network :forwarded_port, guest: 27017, host: 27017

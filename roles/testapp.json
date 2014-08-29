@@ -4,7 +4,6 @@
     "json_class": "Chef::Role",
     "run_list": [
     	"recipe[apt]",
-    	"recipe[iptables-ng]",
     	"recipe[git]",
         "recipe[mongodb::10gen_repo]",
         "recipe[mongodb]",
