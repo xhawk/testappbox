@@ -12,33 +12,47 @@
 #  rule '--protocol tcp --dport 8080 --match state --state NEW --jump ACCEPT'
 #end
 
-execute "disable fingerprint" do 
-	command "echo \"Host github.com\n\tStrictHostKeyChecking no\n\" >> /home/vagrant/.ssh/config"
-	cwd		"/home/vagrant"
-	user 	"vagrant"
+#execute "disable fingerprint" do 
+#	command "echo \"Host github.com\n\tStrictHostKeyChecking no\n\" >> /home/#{node[:user]}/.ssh/config"
+#	cwd		"/home/#{node[:user]}"
+#	user 	"#{node[:user]}"
+#end
+
+deploy_key "github_rsa" do
+  provider Chef::Provider::DeployKeyGithub
+  path '/home/ubuntu/.ssh'
+  credentials({
+    :user => 'xhawk',
+    :password => 'j0s9832k1'
+  })
+  repo 'xhawk/testapp'
+  owner 'ubuntu'
+  group 'ubuntu'
+  mode 00640
+  action :add
 end
 
 # pullaa testapp githubista
-git "/home/vagrant/testapp" do 
-	repository 		"git@github.com:xhawk/testapp.git"
-	revision		"HEAD"
-	action 			:sync
-	user 			"vagrant"
-end
+#git "/home/#{node[:user]}/testapp" do 
+#	repository 		"git@github.com:xhawk/testapp.git"
+#	revision		"HEAD"
+#	action 			:sync
+#	user 			"#{node[:user]}"
+#end
 
 # aja node install
 execute "npm install" do
 	command "npm install"
-	cwd		"/home/vagrant/testapp"
+	cwd		"/home/#{node[:user]}/testapp"
 end
 
 # käynnistä serveri vm:ssä
 execute "gulp" do
 	command "npm install -g gulp"
-	cwd 	"/home/vagrant/testapp"
+	cwd 	"/home/#{node[:user]}/testapp"
 end
 
 execute "run gulp" do
 	command "nohup gulp &"
-	cwd		"/home/vagrant/testapp"
+	cwd		"/home/#{node[:user]}/testapp"
 end

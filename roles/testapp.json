@@ -2,12 +2,13 @@
     "name" : "testapp",
     "chef_type": "role",
     "json_class": "Chef::Role",
+    "install_method": "source",
     "run_list": [
     	"recipe[apt]",
     	"recipe[git]",
         "recipe[mongodb::10gen_repo]",
         "recipe[mongodb]",
-    	"recipe[nodejs]",
+    	"recipe[nodejs::nodejs_from_source]",  
     	"recipe[testapp]"
     ]
 }

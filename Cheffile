@@ -7,6 +7,10 @@ cookbook 'apt'
 cookbook 'git'
 cookbook 'mongodb'
 cookbook 'nodejs'
+cookbook 'deploy_key'
+cookbook 'root_ssh_agent',
+	:git => 'git@github.com:dergachev/chef_root_ssh_agent.git'
+
 #cookbook 'iptables-ng',
 #	:git => 'git@github.com:chr4-cookbooks/iptables-ng.git'
 

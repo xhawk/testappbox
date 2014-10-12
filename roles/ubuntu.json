@@ -1,0 +1,12 @@
+{
+	"name" : "ubuntu",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "override_attributes": {
+  		"user": "ubuntu"
+    },
+    "run_list": [
+    	"recipe[root_ssh_agent::ppid]",
+    	"role[testapp]"
+    ]
+}
