@@ -22,8 +22,7 @@ deploy_key "github_rsa" do
   provider Chef::Provider::DeployKeyGithub
   path '/home/ubuntu/.ssh'
   credentials({
-    :user => 'xhawk',
-    :password => 'j0s9832k1'
+    :token => 'ce1da235be29ea79046a614807bead13d7fbcbcd'
   })
   repo 'xhawk/testapp'
   owner 'ubuntu'

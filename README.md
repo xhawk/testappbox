@@ -29,4 +29,4 @@ knife solo bootstrap -i ec2eu.pem ec2-54-72-40-146.eu-west-1.compute.amazonaws.c
 ## links
 - http://markbirbeck.com/blog/2012/03/16/using-knife-to-launch-ec2-instances-without-a-chef-server/
 - http://www.captnswing.net/2013/01/from-vagrant-to-ec2-with-knife-solo.html
-
+- https://github.com/cassianoleal/cookbook-deploy_key
